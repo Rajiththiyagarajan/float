@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Label Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            padding: 1rem 0.75rem 0.5rem 0.75rem;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            background-color: #fff;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .form-control:focus {
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+            outline: none;
+            border-style: none;
+        }
+
+        .floating-label {
+            position: absolute;
+            top: 50%;
+            left: 0.75rem;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: all 0.2s ease-in-out;
+            color: #6c757d;
+            font-size: 1rem;
+            background-color: #fff;
+            padding: 0 0.25rem;
+        }
+
+        .form-control:not(:placeholder-shown) + .floating-label,
+        .form-control:focus + .floating-label {
+            top: -0.5rem;
+            left: 0.75rem;
+            font-size: 0.75rem;
+            color: #007bff;
+            padding: 0 0.25rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="form-group">
+        <input type="text" class="form-control" id="name" placeholder=" " required>
+        <label for="name" class="floating-label">Your name</label>
+    </div>
+
+    <div class="form-group">
+        <input type="email" class="form-control" id="email" placeholder=" " required>
+        <label for="email" class="floating-label">Your Email</label>
+    </div>
+
+    <div class="form-group">
+        <input type="password" class="form-control" id="password" placeholder=" " required>
+        <label for="password" class="floating-label">Your Phone number</label>
+    </div>
+</div>
+
+</body>
+</html>

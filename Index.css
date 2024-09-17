@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: all 0.2s;
+    pointer-events: none;
+    color: #999;
+    font-size: 16px;
+}
+
+input:focus + label,
+input.has-value + label {
+    top: -20px;
+    left: 10px;
+    font-size: 12px;
+    color: #333;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+input:invalid + label + .error-message {
+    display: block;
+}
